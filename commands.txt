@@ -1,0 +1,14 @@
+Check current screen sessions:
+screen -ls
+
+Remove screen:
+screen -XS <session-id> quit
+
+Check current python processes:
+ps aux | grep python
+
+cd /home/nyaa_grabber
+screen -S nyaa
+screen -r nyaa
+pkill -f nyaa_grabber.py
+python3.10 -u nyaa_grabber.py > output_bot.txt 2>&1 &

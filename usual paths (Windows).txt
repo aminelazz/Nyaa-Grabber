@@ -1,0 +1,5 @@
+Plugins64:
+%APPDATA%\VapourSynth\plugins64
+
+site-packages:
+AppData\Local\Programs\Python\Python38\Lib\site-packages

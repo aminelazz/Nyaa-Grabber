@@ -1,0 +1,8 @@
+discord-py-interactions
+python-dotenv
+requests
+beautifulsoup4
+schedule
+fuzzywuzzy
+python-Levenshtein
+feedparser

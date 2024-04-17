@@ -1,0 +1,48 @@
+sudo apt update
+
+if doesnt exist:
+sudo apt -y install python3.10
+
+if exist:
+sudo apt -Y install software-properties-common
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt update
+sudo apt -Y install python3.10
+
+sudo apt -y install python3-pip
+curl -sS https://bootstrap.pypa.io/get-pip.py | python3.10
+python3.10 -m pip install -r requirements.txt
+
+execute:
+python3.10 rw.py
+
+non-stop execute:
+nohup python3.10 rw.py &
+
+stop:
+pkill -f rw.py
+
+create screen to maintain bot output:
+sudo apt install screen
+screen -S bot_session
+python3.10 -u rw.py > output.txt 2>&1 &
+
+prepend date to each line:
+python3.10 -u rw.py 2>&1 | while IFS= read -r line; do echo "[$(date '+%d-%m-%Y %H:%M:%S')] $line"; done > output.txt &
+python3.10 -u rw.py 2>&1 | while IFS= read -r line; do echo "[$(TZ='Africa/Casablanca' date '+%d-%m-%Y %H:%M:%S')] $line"; done > output.txt &
+
+Detach from the screen session:
+Ctrl + A followed by d
+
+Reattach to the screen session:
+screen -r bot_session
+
+optional:
+python3.10 -m pip install --upgrade pip setuptools
+python3.10 -m pip install setuptools
+
+screen intrs.:
+Identify the name of the session:
+$ screen -ls
+Close a session:
+$ screen -XS <session-id> quit

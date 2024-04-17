@@ -1,0 +1,259 @@
+{
+    "51794": {
+        "anime": {
+            "title": "Nanatsu no Taizai: Mokushiroku no Yonkishi",
+            "titles": [
+                "Nanatsu no Taizai: Mokushiroku no Yonkishi",
+                "\u4e03\u3064\u306e\u5927\u7f6a \u9ed9\u793a\u9332\u306e\u56db\u9a0e\u58eb",
+                "The Seven Deadly Sins: Four Knights of the Apocalypse"
+            ],
+            "episodes": 24,
+            "season": "fall",
+            "year": 2023,
+            "status": "Currently Airing",
+            "score": 7.31,
+            "mal_id": 51794,
+            "url": "https://myanimelist.net/anime/51794/Nanatsu_no_Taizai__Mokushiroku_no_Yonkishi",
+            "image_url": "https://cdn.myanimelist.net/images/anime/1475/138530.webp",
+            "type": "TV",
+            "duration": "23 min per ep",
+            "broadcast": "Sundays at 16:30 (JST)"
+        },
+        "raw_providers": [
+            "varyg"
+        ],
+        "channel_id": 1163216217608298537,
+        "thread_id": 1175513403364753449,
+        "webhook_id": 1175513409312264214,
+        "webhook_url": "https://discord.com/api/webhooks/1175513409312264214/2V_9bb0YFLSQ0EBhFZZ0Pw6sGZ2bmvsdjWrk5sDwZzh4GJeZJG_C27e_HW75nvcbFeg5",
+        "webhook_token": "2V_9bb0YFLSQ0EBhFZZ0Pw6sGZ2bmvsdjWrk5sDwZzh4GJeZJG_C27e_HW75nvcbFeg5"
+    },
+    "54492": {
+        "anime": {
+            "title": "Kusuriya no Hitorigoto",
+            "titles": [
+                "Kusuriya no Hitorigoto",
+                "The Pharmacist's Monologue",
+                "Drugstore Soliloquy",
+                "\u85ac\u5c4b\u306e\u3072\u3068\u308a\u3054\u3068",
+                "The Apothecary Diaries"
+            ],
+            "episodes": 24,
+            "season": "fall",
+            "year": 2023,
+            "status": "Currently Airing",
+            "score": 8.67,
+            "mal_id": 54492,
+            "url": "https://myanimelist.net/anime/54492/Kusuriya_no_Hitorigoto",
+            "image_url": "https://cdn.myanimelist.net/images/anime/1708/138033.webp",
+            "type": "TV",
+            "duration": "22 min per ep",
+            "broadcast": "Sundays at 01:05 (JST)"
+        },
+        "raw_providers": [
+            "varyg",
+            "subsplease",
+            "ember",
+            "dkb",
+            "asw"
+        ],
+        "channel_id": 1164655632318726154,
+        "thread_id": 1175519673689833603,
+        "webhook_id": 1175519679754813462,
+        "webhook_url": "https://discord.com/api/webhooks/1175519679754813462/tKPA6ty33-Ho_n7GAUlHQ16nX4fa6LANGSwJTtUFgBFSzJyCWpt4o0UtxPq12E3FrzLT",
+        "webhook_token": "tKPA6ty33-Ho_n7GAUlHQ16nX4fa6LANGSwJTtUFgBFSzJyCWpt4o0UtxPq12E3FrzLT"
+    },
+    "52741": {
+        "anime": {
+            "title": "Undead Unluck",
+            "titles": [
+                "Undead Unluck",
+                "\u30a2\u30f3\u30c7\u30c3\u30c9\u30a2\u30f3\u30e9\u30c3\u30af"
+            ],
+            "episodes": null,
+            "season": "fall",
+            "year": 2023,
+            "status": "Currently Airing",
+            "score": 7.94,
+            "mal_id": 52741,
+            "url": "https://myanimelist.net/anime/52741/Undead_Unluck",
+            "image_url": "https://cdn.myanimelist.net/images/anime/1136/138410.webp",
+            "type": "TV",
+            "duration": "23 min",
+            "broadcast": "Saturdays at 01:23 (JST)"
+        },
+        "raw_providers": [
+            "varyg",
+            "ember"
+        ],
+        "channel_id": 1161764652036931726,
+        "thread_id": 1175520372066627626,
+        "webhook_id": 1175520377498243133,
+        "webhook_url": "https://discord.com/api/webhooks/1175520377498243133/-scEZSmI6J7DIngic-iOEdE9KXYsOl4V1Tlzlk7DhQh_svMfiYZeu3xUq4wfqFyJsYvQ",
+        "webhook_token": "-scEZSmI6J7DIngic-iOEdE9KXYsOl4V1Tlzlk7DhQh_svMfiYZeu3xUq4wfqFyJsYvQ"
+    },
+    "51297": {
+        "anime": {
+            "title": "Ragna Crimson",
+            "titles": [
+                "Ragna Crimson",
+                "\u30e9\u30b0\u30ca\u30af\u30ea\u30e0\u30be\u30f3"
+            ],
+            "episodes": 24,
+            "season": "fall",
+            "year": 2023,
+            "status": "Currently Airing",
+            "score": 7.52,
+            "mal_id": 51297,
+            "url": "https://myanimelist.net/anime/51297/Ragna_Crimson",
+            "image_url": "https://cdn.myanimelist.net/images/anime/1661/137709.webp",
+            "type": "TV",
+            "duration": "24 min per ep",
+            "broadcast": "Sundays at 01:30 (JST)"
+        },
+        "raw_providers": [
+            "ember",
+            "asw",
+            "subsplease",
+            "subsplus"
+        ],
+        "channel_id": 1157657046339039302,
+        "thread_id": 1175520922380275733,
+        "webhook_id": 1175520931750367395,
+        "webhook_url": "https://discord.com/api/webhooks/1175520931750367395/1aWxPosQcvThWAPzNB2IgT-fFlvG_K6xkFuDGxRs5RA7moF-FB4Hbkj4AYJGXFr6dLxS",
+        "webhook_token": "1aWxPosQcvThWAPzNB2IgT-fFlvG_K6xkFuDGxRs5RA7moF-FB4Hbkj4AYJGXFr6dLxS"
+    },
+    "51215": {
+        "anime": {
+            "title": "Seijo no Maryoku wa Bannou desu Season 2",
+            "titles": [
+                "Seijo no Maryoku wa Bannou desu Season 2",
+                "Seijo no Maryoku wa Bannou desu 2nd Season",
+                "The power of the saint is all around Season 2",
+                "\u8056\u5973\u306e\u9b54\u529b\u306f\u4e07\u80fd\u3067\u3059 Season2",
+                "The Saint's Magic Power is Omnipotent Season 2"
+            ],
+            "episodes": 12,
+            "season": "fall",
+            "year": 2023,
+            "status": "Currently Airing",
+            "score": 7.41,
+            "mal_id": 51215,
+            "url": "https://myanimelist.net/anime/51215/Seijo_no_Maryoku_wa_Bannou_desu_Season_2",
+            "image_url": "https://cdn.myanimelist.net/images/anime/1077/136855.webp",
+            "type": "TV",
+            "duration": "23 min per ep",
+            "broadcast": "Tuesdays at 23:00 (JST)"
+        },
+        "raw_providers": [
+            "asw",
+            "erai-raws",
+            "subsplease",
+            "ember"
+        ],
+        "channel_id": 1158754711286059038,
+        "thread_id": 1175521251448594534,
+        "webhook_id": 1175521258490826824,
+        "webhook_url": "https://discord.com/api/webhooks/1175521258490826824/opTu3u-EP-oIcGs5XN0cHhSiedw2DSeEDX8LU_6xWY9ySbJK9rY17HHYkkJwWtpFed1y",
+        "webhook_token": "opTu3u-EP-oIcGs5XN0cHhSiedw2DSeEDX8LU_6xWY9ySbJK9rY17HHYkkJwWtpFed1y"
+    },
+    "54595": {
+        "anime": {
+            "title": "Kage no Jitsuryokusha ni Naritakute! 2nd Season",
+            "titles": [
+                "Kage no Jitsuryokusha ni Naritakute! 2nd Season",
+                "Shadow Garden 2nd Season",
+                "\u9670\u306e\u5b9f\u529b\u8005\u306b\u306a\u308a\u305f\u304f\u3066\uff01 2nd Season",
+                "The Eminence in Shadow Season 2"
+            ],
+            "episodes": 12,
+            "season": "fall",
+            "year": 2023,
+            "status": "Currently Airing",
+            "score": 8.62,
+            "mal_id": 54595,
+            "url": "https://myanimelist.net/anime/54595/Kage_no_Jitsuryokusha_ni_Naritakute_2nd_Season",
+            "image_url": "https://cdn.myanimelist.net/images/anime/1622/139331.webp",
+            "type": "TV",
+            "duration": "23 min per ep",
+            "broadcast": "Wednesdays at 22:30 (JST)"
+        },
+        "raw_providers": [
+            "ember",
+            "asw",
+            "subsplease",
+            "erai-raws"
+        ],
+        "channel_id": 1157542661738205195,
+        "thread_id": 1175556818911633589,
+        "webhook_id": 1175556824456495205,
+        "webhook_url": "https://discord.com/api/webhooks/1175556824456495205/Yz7FnBEWgYB_V1qbzhZT1lRziyypuaTfvRDBLZtKg7CUFA7NJiPm_KYb6ZJLY0fHDXhi",
+        "webhook_token": "Yz7FnBEWgYB_V1qbzhZT1lRziyypuaTfvRDBLZtKg7CUFA7NJiPm_KYb6ZJLY0fHDXhi"
+    },
+    "53730": {
+        "anime": {
+            "title": "Sokushi Cheat ga Saikyou sugite, Isekai no Yatsura ga Marude Aite ni Naranai n desu ga.",
+            "titles": [
+                "Sokushi Cheat ga Saikyou sugite, Isekai no Yatsura ga Marude Aite ni Naranai n desu ga.",
+                "The other world doesn't stand a chance against the power of instant death",
+                "\u5373\u6b7b\u30c1\u30fc\u30c8\u304c\u6700\u5f37\u3059\u304e\u3066\u3001\u7570\u4e16\u754c\u306e\u3084\u3064\u3089\u304c\u307e\u308b\u3067\u76f8\u624b\u306b\u306a\u3089\u306a\u3044\u3093\u3067\u3059\u304c\u3002",
+                "My Instant Death Ability is So Overpowered, No One in This Other World Stands a Chance Against Me!"
+            ],
+            "episodes": null,
+            "season": "winter",
+            "year": 2024,
+            "status": "Not yet aired",
+            "score": null,
+            "mal_id": 53730,
+            "url": "https://myanimelist.net/anime/53730/Sokushi_Cheat_ga_Saikyou_sugite_Isekai_no_Yatsura_ga_Marude_Aite_ni_Naranai_n_desu_ga",
+            "image_url": "https://cdn.myanimelist.net/images/anime/1734/139673.webp",
+            "type": "TV",
+            "duration": "Unknown",
+            "broadcast": "Fridays at 00:30 (JST)"
+        },
+        "raw_providers": [
+            "Subsplease",
+            "erai-raws",
+            "asw",
+            "ember"
+        ],
+        "channel_id": 1191443542845956187,
+        "thread_id": 1191452319129272342,
+        "webhook_id": 1191452335508037742,
+        "webhook_url": "https://discord.com/api/webhooks/1191452335508037742/fyN64auXXmxy-uCRbtHnY8sOb-WIOeEDc6Ak0mL08OpVJBtJM86nWcwVo23wZqGfPyi4",
+        "webhook_token": "fyN64auXXmxy-uCRbtHnY8sOb-WIOeEDc6Ak0mL08OpVJBtJM86nWcwVo23wZqGfPyi4"
+    },
+    "55690": {
+        "anime": {
+            "title": "Boku no Kokoro no Yabai Yatsu Season 2",
+            "titles": [
+                "Boku no Kokoro no Yabai Yatsu Season 2",
+                "Bokuyaba",
+                "\u50d5\u306e\u5fc3\u306e\u30e4\u30d0\u30a4\u3084\u3064 \u7b2c2\u671f",
+                "The Dangers in My Heart Season 2"
+            ],
+            "episodes": 13,
+            "season": "winter",
+            "year": 2024,
+            "status": "Not yet aired",
+            "score": null,
+            "mal_id": 55690,
+            "url": "https://myanimelist.net/anime/55690/Boku_no_Kokoro_no_Yabai_Yatsu_Season_2",
+            "image_url": "https://cdn.myanimelist.net/images/anime/1643/138581.webp",
+            "type": "TV",
+            "duration": "Unknown",
+            "broadcast": "Sundays at 01:30 (JST)"
+        },
+        "raw_providers": [
+            "subsplease",
+            "asw",
+            "erai-raws",
+            "ember"
+        ],
+        "channel_id": 1192500656079118346,
+        "thread_id": 1192938857973424399,
+        "webhook_id": 1192938864864669729,
+        "webhook_url": "https://discord.com/api/webhooks/1192938864864669729/UehFWqE12To3bL_xd7Q5NahXJT3rz3Pj2Kers6Yb984DvZbRMfoeWgEirw1m8A-NEPZh",
+        "webhook_token": "UehFWqE12To3bL_xd7Q5NahXJT3rz3Pj2Kers6Yb984DvZbRMfoeWgEirw1m8A-NEPZh"
+    }
+}
