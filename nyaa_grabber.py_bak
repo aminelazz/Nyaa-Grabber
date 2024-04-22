@@ -13,6 +13,7 @@ from interactions import Modal, ModalContext, ParagraphText, ShortText
 from interactions import Button, ButtonStyle, ComponentContext, component_callback
 from interactions.ext.paginators import Paginator
 from dotenv import load_dotenv
+import re
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -24,6 +25,9 @@ grabber_subprocess = None
 check_mark = ":white_check_mark:"
 red_square = ":red_square:"
 information_source = ":information_source:"
+link_emoji = "🔗"
+magnet_emoji = "🧲"
+torrent_emoji = "📥"
 
 # Get commands
 def get_commands():
@@ -155,9 +159,26 @@ async def get_raws(ctx: SlashContext, raw_provider:str, anime_name:str, ep_numbe
             link = a[0]['href']
             title = a[0]['title']
 
+        # Get magnet and torrent link
+        second_cell = row.find_all('td')[2]
+
+        # Links
+        link = f"https://nyaa.si{link}"
+        torrent_link = f"https://nyaa.si{second_cell.find_all('a')[0]['href']}"
+        magnet_link = second_cell.find_all('a')[1]['href']
+
+        # Replace the magnet link
+        magnet_link = magnet_link.replace("magnet:?xt=", "https://nyaasi-to-magnet.up.railway.app/nyaamagnet/")
+        magnet_link = re.sub(r"&dn=.+", "", magnet_link)
+
         # Print the title and the link
-        raws.append(f"[{title}](https://nyaa.si{link})")
+        raws.append(f"""
+***{title}***:
+[{link_emoji} Link]({link}) | [{torrent_emoji} Torrent]({torrent_link}) | [{magnet_emoji} Magnet]({magnet_link})""")
         # await ctx.send(f"You input {integer_option}")
+
+    # for raw in raws:
+    #     await ctx.send(content=raw, suppress_embeds=True)
 
     await ctx.send(content="\n".join(raws), suppress_embeds=True)
 
@@ -191,6 +212,7 @@ async def start_grabber(ctx: SlashContext):
         #     grabber_subprocess = subprocess.Popen('python3.10 -u grabber.py > output.txt 2>&1 &', stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         
         grabber_subprocess = subprocess.Popen(['python3.10', '-u', 'grabber.py'], stdout=open('output.txt', 'w'), stderr=subprocess.STDOUT, preexec_fn=os.setpgrp)
+        # grabber_subprocess = subprocess.Popen(['python', '-u', 'grabber.py'])
 
         await message.edit(content=f"{check_mark} The grabber subprocess **started successfully**")
     else:
@@ -486,7 +508,7 @@ async def reset_channel(ctx: SlashContext):
         print(e)
         await ctx.send(content=f"Error: {e}", suppress_embeds=True)
 
-@slash_command(name="edit_channel", description="Edit current channel configuration")
+@slash_command(name="edit_channels_raws", description="Edit current channel configuration")
 async def edit_channel(ctx: SlashContext):
     try:
         # Add typing effect
@@ -510,7 +532,6 @@ async def edit_channel(ctx: SlashContext):
         # Check if the channel is already configured
         for grabber in grabber_data.values():
             anime_title:str = grabber["anime"]["title"]
-            other_titles:str = ', '.join(grabber["anime"]["titles"])
             mal_id:str = grabber["anime"]["mal_id"]
             url:str = grabber["anime"]["url"]
             channel_id:str = grabber["channel_id"]
@@ -567,7 +588,6 @@ async def edit_button(ctx: ComponentContext):
         # Check if the channel is already configured
         for grabber in grabber_data.values():
             anime_title:str = grabber["anime"]["title"]
-            other_titles:str = '\n'.join(grabber["anime"]["titles"])
             mal_id:str = grabber["anime"]["mal_id"]
             url:str = grabber["anime"]["url"]
             channel_id:str = grabber["channel_id"]
@@ -588,13 +608,6 @@ async def edit_button(ctx: ComponentContext):
                         required=False,
                         value=raw_providers,
                     ),
-                    ParagraphText(
-                        label="Titles",
-                        custom_id="other_titles",
-                        placeholder="Add other titles if any, every title in line",
-                        required=True,
-                        value=other_titles,
-                    ),
                     title="Edit anime configuration",
                 )
 
@@ -605,7 +618,6 @@ async def edit_button(ctx: ComponentContext):
                 modal_ctx:ModalContext = await ctx.bot.wait_for_modal(anime_modal)
                 # Extract the responses
                 raw_providers:list = modal_ctx.responses["raw_providers"].split("\n")
-                other_titles:list = modal_ctx.responses["other_titles"].split("\n")
 
                 # Add typing effect
                 await modal_ctx.defer()
@@ -613,21 +625,16 @@ async def edit_button(ctx: ComponentContext):
                 # Save the new raw_providers
                 grabber["raw_providers"] = raw_providers
 
-                # Save the new titles
-                grabber["anime"]["titles"] = other_titles
-
                 # Write the grabber_data dictionnary to the file
                 with open("grabber_data.json", "w") as f:
                     json.dump(grabber_data, f, indent=4)
 
                 # Send to channel
                 content = f"""
-The channel configuration has been updated successfully.
+The raws providers has been updated successfully.
 
 **Raw providers:** {', '.join(raw_providers)}
-
-**Titles:**
-- """ + "\n- ".join(other_titles)
+"""
 
                 # Send the content in the modal
                 await modal_ctx.send(content= content,

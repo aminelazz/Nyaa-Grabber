@@ -54,53 +54,70 @@ def job(send):
     with open('grabber_data.json', 'r+') as f:
         grabber_data:dict = json.load(f)
 
-    for grabber in grabber_data.values():
-        anime = grabber["anime"]
-        raw_providers = grabber["raw_providers"]
-        webhook_url = f"{grabber['webhook_url']}?thread_id={grabber['thread_id']}"
+    for guild in grabber_data.values():
+        for grabber in guild.values():
+            # Get the anime data
+            anime = grabber["anime"]
+            raw_providers = grabber["raw_providers"]
+            webhook_url = f"{grabber['webhook_url']}?thread_id={grabber['thread_id']}"
+            fetch: bool = grabber["fetch"] if ("fetch" in grabber.keys()) else True
 
-        matched_torrents = []
-        # loop over titles to check if the torrent name matches
-        for title in anime["titles"]:
-            for item in new_items:
-                if fuzz.token_set_ratio(title, item["title"]) > 70:
-                    if not raw_providers:
-                        matched_torrents.append(item)
-                        continue
-                    else:
-                        # match raw providers
-                        for raw_provider in raw_providers:
-                            if str.lower(raw_provider) in str.lower(item["title"]):
-                                # Add the torrent to the matched torrents
-                                matched_torrents.append(item)
-                                # break the loop
-                                # break
+            # If fetch is false, skip the loop
+            if not fetch:
+                continue
 
-        # Remove duplicates
-        unique_list = []
-        for item in matched_torrents:
-            if item not in unique_list:
-                unique_list.append(item)
-        
-        # Send the message to the channel
-        if send:
-            # Send it to the channel
-            if unique_list:
-                # Send the message to the channel
-                message = f"New episode of {anime['title']} is out!\n\n"
-                for torrent in unique_list:
-                    # Get the magnet link
-                    magnet_link, torrent_link = get_magnet_link(torrent["link"])
-                    raw = f"""
+            # If raws are not provided, skip the loop
+            if len(raw_providers) == 0 or raw_providers[0] == "":
+                continue
+
+            matched_torrents = []
+            # loop over titles to check if the torrent name matches
+            for title in anime["titles"]:
+                for item in new_items:
+                    if fuzz.token_set_ratio(title, item["title"]) > 70:
+                        if not raw_providers:
+                            matched_torrents.append(item)
+                            continue
+                        else:
+                            # match raw providers
+                            for raw_provider in raw_providers:
+                                if str.lower(raw_provider) in str.lower(item["title"]):
+                                    # Add the torrent to the matched torrents
+                                    matched_torrents.append(item)
+                                    # break the loop
+                                    # break
+
+            # Remove duplicates
+            unique_list = []
+            for item in matched_torrents:
+                if item not in unique_list:
+                    unique_list.append(item)
+
+            # Send the message to the channel
+            if send:
+                # Send it to the channel
+                if unique_list:
+                    # Send the message to the channel
+                    message = f"New episode of {anime['title']} is out!\n\n"
+                    for torrent in unique_list:
+                        # Get the magnet link
+                        magnet_link, torrent_link = get_magnet_link(torrent["link"])
+                        raw = f"""
 ***{torrent['title']}***:
 [{link_emoji} Link]({torrent['link']})   |   [{torrent_emoji} Torrent]({torrent_link})   |   [{magnet_emoji} Magnet]({magnet_link})"""
-                    message += f"{raw}\n\n"
-                    
-                    # Log
-                    print(f"Sending {torrent['title']} with magnet...")
+                        message += f"{raw}\n\n"
 
-                # Send the message to the channel
-                requests.post(webhook_url, json={"content": message})
+                    # Suppress the embeds value
+                    SUPPRESS_EMBEDS = int(1 << 2)
+
+                    # Set the payload
+                    payload = {
+                        "content": message,
+                        "flags": SUPPRESS_EMBEDS
+                    }
+    
+                    # Send the message to the channel
+                    requests.post(webhook_url, json=payload)
 
 
 # Function to scrap the link and get magnet link
@@ -123,7 +140,7 @@ def get_magnet_link(link):
         return None, None
 
 # Only fetch without sending
-job(False)
+job(True)
 
 # Schedule the job to run every 5 minutes
 schedule.every(5).minutes.do(lambda: job(True))
